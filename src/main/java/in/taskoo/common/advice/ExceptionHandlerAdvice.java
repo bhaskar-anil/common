@@ -19,7 +19,6 @@ import in.taskoo.common.error.TkCommonErrorType;
 import in.taskoo.common.error.dto.ErrorMessageField;
 import in.taskoo.common.error.dto.TkError;
 import in.taskoo.common.error.dto.TkErrorResponse;
-import in.taskoo.common.exception.DataNotFoundException;
 import in.taskoo.common.exception.InvalidRequestException;
 import in.taskoo.common.exception.NotAcceptableException;
 import in.taskoo.common.logging.ErrorLogEntry;
@@ -61,11 +60,7 @@ public class ExceptionHandlerAdvice {
         return exception.getErrorResponse();
     }
 
-    @ResponseStatus(HttpStatus.NOT_FOUND)
-    @ExceptionHandler(DataNotFoundException.class)
-    public TkErrorResponse handleDataNotFound(DataNotFoundException exception) {
-        return exception.getErrorResponse();
-    }
+
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler({ Exception.class, IllegalStateException.class })

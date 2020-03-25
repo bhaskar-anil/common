@@ -10,7 +10,7 @@ public abstract class TkBaseException extends RuntimeException {
     private static final long serialVersionUID = 7057981566943771324L;
     private TkErrorResponse errorResponse;
 
-    TkBaseException(TkErrorResponse errorResponse) {
+  public TkBaseException(TkErrorResponse errorResponse) {
         this.errorResponse = errorResponse;
     }
 }
